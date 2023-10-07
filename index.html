@@ -171,11 +171,11 @@
 <p><strong>Files to Edit and Submit:</strong> You will fill in portions of <code class="highlighter-rouge">multiAgents.py</code> during the assignment. Submit a zipped version of "ASSIGNMENT" to the dropbox on D2L.
 </p>
 
-<p><strong>Evaluation:</strong> Your code will be autograded for technical correctness. Please <em>do not</em> change the names of any provided functions or classes within the code, or you will wreak havoc on the autograder. However, the correctness of your implementation -- not the autograder's output -- will be the final judge of your score.  If necessary, we will review and grade assignments individually to ensure that you receive due credit for your work.
+<p><strong>Evaluation:</strong> Your code will be autograded for technical correctness. Please <em>do not</em> change the names of any provided functions or classes within the code, or you will wreak havoc on the autograder. However, the correctness of your implementation -- not the autograder's output -- will be the final judge of your score.  If necessary, I will review and grade assignments individually to ensure that you receive due credit for your work.
 
 <p><strong>Academic Dishonesty:</strong> I will be checking your code against other submissions in the class for logical redundancy. If you copy someone else's code and submit it with minor changes, I will know. These cheat detectors are quite hard to fool, so please don't try. I trust you all to submit your own work only; <em>please</em> don't let me down.
 
-<p><strong>Getting Help:</strong> You are not alone!  If you find yourself stuck on something, contact me! Office hours are there for your support; please use them. We want these projects to be rewarding and instructional, not frustrating and demoralizing.</p>
+<p><strong>Getting Help:</strong> You are not alone!  If you find yourself stuck on something, contact me! Office hours are there for your support; please use them. I want these projects to be rewarding and instructional, not frustrating and demoralizing.</p>
 <hr>
 
 <h2 id="welcome-to-multi-agent-pacman">Welcome to Multi-Agent Pacman</h2>
@@ -226,7 +226,7 @@
 
 <p><em>Options:</em> Default ghosts are random; you can also play for fun with slightly smarter directional ghosts using <code class="highlighter-rouge">-g DirectionalGhost</code>. If the randomness is preventing you from telling whether your agent is improving, you can use <code class="highlighter-rouge">-f</code> to run with a fixed random seed (same random choices every game). You can also play multiple games in a row with <code class="highlighter-rouge">-n</code>. Turn off graphics with <code class="highlighter-rouge">-q</code> to run lots of games quickly.</p>
 
-<p><em>Grading:</em> We will run your agent on the <code class="highlighter-rouge">openClassic</code> layout 10 times. You will receive 0 points if your agent times out, or never wins. You will receive 1 point if your agent wins at least 5 times, or 2 points if your agent wins all 10 games. You will receive an additional 1 point if your agent's average score is greater than 500, or 2 points if it is greater than 1000. You can try your agent out under these conditions with</p>
+<p><em>Grading:</em> I will run your agent on the <code class="highlighter-rouge">openClassic</code> layout 10 times. You will receive 0 points if your agent times out, or never wins. You will receive 1 point if your agent wins at least 5 times, or 2 points if your agent wins all 10 games. You will receive an additional 1 point if your agent's average score is greater than 500, or 2 points if it is greater than 1000. You can try your agent out under these conditions with</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code id="codeBlock9">python autograder.py <span class="nt">-q</span> q1
 </code></pre><a type="btn" class="badge badge-light btn-copy-code" data-clipboard-target="#codeBlock9"><i class="fal fa-copy"></i> Copy</a></div></div>
@@ -248,7 +248,7 @@
 
 <p><em>Important:</em> There's a divergence here in the use of the term 'ply' from how we've used it in lecture (sorry about the discrepancy, although I'll note that the way we've used it in lecture is the general accepted <a href="https://en.wikipedia.org/wiki/Ply_(game_theory)">definition of a ply</a>!): Here, a single search ply is considered to be one Pacman move and all the ghosts' responses, so depth 2 search will involve Pacman and each ghost moving two times.</p>
 
-<p><em>Grading:</em> We will be checking your code to determine whether it explores the correct number of game states. This is the only reliable way to detect some very subtle bugs in implementations of minimax. As a result, the autograder will be very picky about how many times you call <code class="highlighter-rouge">GameState.generateSuccessor</code>. If you call it any more or less than necessary, the autograder will complain. To test and debug your code, run</p>
+<p><em>Grading:</em> I will be checking your code to determine whether it explores the correct number of game states. This is the only reliable way to detect some very subtle bugs in implementations of minimax. As a result, the autograder will be very picky about how many times you call <code class="highlighter-rouge">GameState.generateSuccessor</code>. If you call it any more or less than necessary, the autograder will complain. To test and debug your code, run</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code id="codeBlock11">python autograder.py <span class="nt">-q</span> q2
 </code></pre><a type="btn" class="badge badge-light btn-copy-code" data-clipboard-target="#codeBlock11"><i class="fal fa-copy"></i> Copy</a></div></div>
@@ -291,7 +291,7 @@
 
 <p>The <code class="highlighter-rouge">AlphaBetaAgent</code> minimax values should be identical to the <code class="highlighter-rouge">MinimaxAgent</code> minimax values, although the actions it selects can vary because of different tie-breaking behavior. Again, the minimax values of the initial state in the <code class="highlighter-rouge">minimaxClassic</code> layout are 9, 8, 7 and -492 for depths 1, 2, 3 and 4 respectively.</p>
 
-<p><em>Grading:</em> Because we check your code to determine whether it explores the correct number of states, it is important that you perform alpha-beta pruning without reordering children. In other words, successor states should always be processed in the order returned by <code class="highlighter-rouge">GameState.getLegalActions</code>. Again, do not call <code class="highlighter-rouge">GameState.generateSuccessor</code> more than necessary.</p>
+<p><em>Grading:</em> Because I check your code to determine whether it explores the correct number of states, it is important that you perform alpha-beta pruning without reordering children. In other words, successor states should always be processed in the order returned by <code class="highlighter-rouge">GameState.getLegalActions</code>. Again, do not call <code class="highlighter-rouge">GameState.generateSuccessor</code> more than necessary.</p>
 
 <p><strong><em>You must not prune on equality in order to match the set of states explored by our autograder.</em></strong> (Indeed, alternatively, but incompatible with our autograder, would be to also allow for pruning on equality and invoke alpha-beta once on each child of the root node, but this will not match the autograder.)</p>
 
@@ -349,7 +349,7 @@
 
 <p>Write a better evaluation function for pacman in the provided function <code class="highlighter-rouge">betterEvaluationFunction</code>. The evaluation function should evaluate states, rather than actions like your reflex agent evaluation function did. With depth 2 search, your evaluation function should clear the <code class="highlighter-rouge">smallClassic</code> layout with one random ghost more than half the time and still run at a reasonable rate (to get full credit, Pacman should be averaging around 1000 points when he's winning).</p>
 
-<p><em>Grading:</em> the autograder will run your agent on the smallClassic layout 10 times. We will assign points to your evaluation function in the following way:</p>
+<p><em>Grading:</em> the autograder will run your agent on the smallClassic layout 10 times. I will assign points to your evaluation function in the following way:</p>
 
 <ul>
   <li>If you win at least once without timing out the autograder, you receive 1 points. Any agent not satisfying these criteria will receive 0 points.</li>
@@ -357,7 +357,7 @@
   <li>+1 for an average score of at least 500, +2 for an average score of at least 1000 (including scores on lost games)</li>
   <li>+1 if your games take on average less than 30 seconds on the autograder machine, when run with <code class="highlighter-rouge">--no-graphics</code>. The autograder is run on a machine with a fair amount of resources, but your personal computer could be far less performant (netbooks) or far more performant (gaming rigs).</li>
   <li>The additional points for average score and computation time will only be awarded if you win at least 5 times.</li>
-  <li>Please do not copy any files from Project 1, as it will not pass the autograder we use to grade the submissions.</li>
+  <li>Please do not copy any files from Project 1, as it will not pass the autograder I use to grade the submissions.</li>
 </ul>
 
 <p>You can try your agent out under these conditions with</p>
